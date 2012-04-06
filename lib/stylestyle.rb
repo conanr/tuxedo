@@ -10,7 +10,10 @@ require 'stylestyle/runner'
 
 module StyleStyle
   def output_to_console
-    parsed_cane_output = StyleStyle::CaneParser.parse_cane(StyleStyle::Runner.run_cane)
-    formatted_cane_output = StyleStyle::Outputter.format_cane_output
+    #parsed_cane_output is hash where keys are errors and values are error objects
+    cp = StyleStyle::CaneParser.new
+    cane_output = StyleStyle::Runner.run_cane
+    cp.parse_cane(cane_output)
+    StyleStyle::Outputter.print_to_screen(cp.result)
   end
 end
