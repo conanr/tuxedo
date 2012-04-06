@@ -1,15 +1,14 @@
 module StyleStyle
   class CaneParser
     def parse_cane(output)
-      # read the output line by line
-      result = []
+      result = Hash.new([])
       output.split("\n").each do |line|
         if has_error?(line)
-          line_result = {}
-          line_result[:error] = get_error(line)
-          line_result[:file] = get_file(line)
-          line_result[:line_number] = get_line_number(line)
-          result << line_result
+          c = StyleStyle::CaneError.create(:error => get_error(line), 
+                                           :file => get_file(line), 
+                                           :line_number => get_line_number(line))
+          
+          result[ get_error(line).to_sym ] << c
         end
       end
       result
@@ -20,6 +19,7 @@ module StyleStyle
     end
     
     def get_error(line)
+      
     end
     
     def get_file(line)
