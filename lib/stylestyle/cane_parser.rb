@@ -12,7 +12,8 @@ module StyleStyle
           error = process_line(line)
           push_error(error)
         end
-      end    
+      end
+      return self  
     end
 
     def push_error(error)
@@ -26,7 +27,7 @@ module StyleStyle
     def process_line(line)
       StyleStyle::Error.new( :name => get_error(line), 
                              :source => get_file(line), 
-                             :line => get_line(line))
+                             :line => get_lines(line))
     end
 
     def has_error?(line)
@@ -45,11 +46,11 @@ module StyleStyle
     end
     
     def get_file(line)
-      line.match(/([a-zA-Z0-9.\/]+):/)[0]
+      line.match(/([a-zA-Z0-9.\/_]+):/)[1]
     end
     
-    def get_line(line)
-      line.match(/:(\d+)/)[0]
+    def get_lines(line)
+      [ line.match(/:(\d+)/)[1] ]
     end
   end
 end

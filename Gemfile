@@ -5,4 +5,5 @@ gem 'reek'
 
 group :developement, :test do
   gem 'rspec'
+  gem 'fabrication'
 end
