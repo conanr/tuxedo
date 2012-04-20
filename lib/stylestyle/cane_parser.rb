@@ -55,9 +55,9 @@ module StyleStyle
 
     def get_lines(line)
       if line.include?(":")
-        [ line.match(/:(\d+)/)[1] ]
+        [ line.match(/:(\d+)/)[1].to_i ]
       else
-        [ line.split(" ").last ]
+        [ line.split(" ").last.to_i ]
       end
     end
   end

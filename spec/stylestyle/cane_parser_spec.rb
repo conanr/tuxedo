@@ -26,7 +26,7 @@ describe "cane parser" do
           end
 
           it "identifies the correct line number for the error" do
-            cane_parser.result[:"Line contains trailing whitespaces"].first.line.should == [ "4" ]
+            cane_parser.result[:"Line contains trailing whitespaces"].first.line.should == [ 4 ]
           end
         end
         
@@ -40,7 +40,7 @@ describe "cane parser" do
           end
 
           it "identifies the correct line number for the error" do
-            cane_parser.result[:"Line is >80 characters"].first.line.should == [ "47" ]
+            cane_parser.result[:"Line is >80 characters"].first.line.should == [ 47 ]
           end
         end
         
@@ -54,7 +54,7 @@ describe "cane parser" do
           end
           
           it "identifies the correct line number for the error" do
-            cane_parser.result[:"Maximum allowed ABC complexity"].first.line.should == [ "23" ]
+            cane_parser.result[:"Maximum allowed ABC complexity"].first.line.should == [ 23 ]
           end
         end
       end
