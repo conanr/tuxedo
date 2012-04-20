@@ -8,6 +8,10 @@ module StyleStyle
 
     def parse_reek(reek_output)
       reek_hash = YAML::load(clean_reek(reek_output))
+      unless reek_hash
+        puts "No reek errors found."
+        return self
+      end
 
       reek_hash.each do |hash|
         error = process_hash(hash)
