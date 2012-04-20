@@ -13,8 +13,8 @@ module StyleStyle
       def run_reek
         reek_result = Cli.sh("reek -qy .")
 
-        if reek_result.exit_code != 0
-          if needs_mvz_reek(reek_result.stderr)
+        if reek_failed?(reek_result)
+          if need_mvz_reek?(reek_result.stderr)
             print_use_mvz_reek
           else
             print_reek_failed
@@ -27,8 +27,12 @@ module StyleStyle
 
       private
 
-      def needs_mvz_reek(stderr)
-        RUBY_VERSION == '1.9.2' &&
+      def reek_failed?(result)
+        !result.stderr.empty?
+      end
+
+      def need_mvz_reek?(stderr)
+        RUBY_VERSION >= '1.9.2' &&
           stderr.index("Error: undefined method `sexp_type'")
       end
 
