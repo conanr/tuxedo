@@ -13,13 +13,4 @@ RSpec.configure do |config|
   config.filter_run :focus
 end
 
-module Kernel
-  def capture_stdout
-    out = StringIO.new
-    $stdout = out
-    yield
-    return out
-  ensure
-    $stdout = STDOUT
-  end
-end
+include StyleStyle::Tty

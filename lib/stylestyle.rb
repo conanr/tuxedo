@@ -7,6 +7,7 @@ require 'stylestyle/cane_parser'
 require 'stylestyle/reek_parser'
 require 'stylestyle/error'
 require 'stylestyle/runner'
+require 'stylestyle/tty'
 
 module StyleStyle
   def self.output_to_console
