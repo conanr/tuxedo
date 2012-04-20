@@ -1,6 +1,6 @@
 $LOAD_PATH.unshift(File.expand_path(File.dirname(__FILE__))) unless
   $LOAD_PATH.include?(File.expand_path(File.dirname(__FILE__)))
-  
+
 require 'yaml'
 require 'stylestyle/outputter'
 require 'stylestyle/cane_parser'

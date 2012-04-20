@@ -30,23 +30,23 @@ module StyleStyle
         self.result[ error.name.to_sym ] << error
       else
         self.result[ error.name.to_sym ] = [ error ]
-      end   
+      end
     end
-    
+
     def process_hash(hash)
-      StyleStyle::Error.new( :name => get_error(hash), 
-                             :source => get_file(hash), 
+      StyleStyle::Error.new( :name => get_error(hash),
+                             :source => get_file(hash),
                              :line => get_lines(hash))
     end
 
     def get_error(hash)
       hash["smell"]["subclass"]
     end
-    
+
     def get_file(hash)
       hash["location"]["source"]
     end
-    
+
     def get_lines(hash)
       hash["location"]["lines"]
     end
