@@ -10,7 +10,9 @@ describe "cane parser" do
 
       before(:all) do
         cane_parser.parse_cane(output_1)
-        StyleStyle::Outputter.print_to_screen(cane_parser.result)
+        capture_stdout do
+          StyleStyle::Outputter.print_to_screen(cane_parser.result)
+        end
       end
 
       context "after parsing the output" do

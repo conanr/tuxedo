@@ -10,7 +10,9 @@ describe "Reek parser" do
 
       before(:all) do
         reek_parser.parse_reek(output_1)
-        StyleStyle::Outputter.print_to_screen(reek_parser.result)
+        capture_stdout do
+          StyleStyle::Outputter.print_to_screen(reek_parser.result)
+        end
       end
 
       context "after parsing the output" do
