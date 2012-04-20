@@ -11,15 +11,14 @@ require 'stylestyle/runner'
 module StyleStyle
   def self.output_to_console
     #parsed_cane_output is hash where keys are errors and values are error objects
-    # cp = StyleStyle::CaneParser.new
-    # cane_output = StyleStyle::Runner.run_cane
-    # cp.parse_cane(cane_output)
-    # StyleStyle::Outputter.print_to_screen(cp.result)
+    cp = StyleStyle::CaneParser.new
+    cane_output = StyleStyle::Runner.run_cane
+    cp.parse_cane(cane_output)
+    StyleStyle::Outputter.print_to_screen(cp.result)
 
     rp = StyleStyle::ReekParser.new
     reek_output = StyleStyle::Runner.run_reek
     rp.parse_reek(reek_output)
-    StyleStyle::Outputter.print_to_screen(rp.result)
-
+    StyleStyle::Outputter.print_to_screen(rp.result) if rp.result.is_a? Hash
   end
 end
