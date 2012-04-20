@@ -10,7 +10,7 @@ RSpec::Core::RakeTask.new do |t|
   t.pattern = "./spec/**/*_spec.rb"
 end
 
-# Taken from RefineryCMD
+# Taken from RefineryCMS
 # https://github.com/resolve/refinerycms/blob/master/core/lib/tasks/refinery.rake
 desc 'Removes trailing whitespace across the entire application.'
 task :whitespace do
