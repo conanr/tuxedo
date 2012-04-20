@@ -1,3 +1,10 @@
+require 'rubygems'
+require 'rspec/core/rake_task'
+
+RSpec::Core::RakeTask.new do |t|
+  t.pattern = "./spec/**/*_spec.rb"
+end
+
 # Taken from RefineryCMD
 # https://github.com/resolve/refinerycms/blob/master/core/lib/tasks/refinery.rake
 desc 'Removes trailing whitespace across the entire application.'
