@@ -1,5 +1,10 @@
-require 'rubygems'
 require 'rspec/core/rake_task'
+require './lib/stylestyle/rake_task'
+require 'stylestyle/rake_task'
+
+StyleStyle::RakeTask.new do
+
+end
 
 RSpec::Core::RakeTask.new do |t|
   t.pattern = "./spec/**/*_spec.rb"
