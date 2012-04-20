@@ -1,6 +1,10 @@
 module StyleStyle
   def generate_cane_output
-    "Lines violated style requirements (16):
+    "Methods exceeded maximum allowed ABC complexity (1):
+
+  app/controllers/orders_controller.rb         OrdersController > create        23
+      
+    Lines violated style requirements (2):
 
   app/controllers/carts_controller.rb:4                 Line contains trailing whitespaces
   app/controllers/products_controller.rb:47             Line is >80 characters (89)"

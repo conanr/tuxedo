@@ -16,28 +16,46 @@ describe "cane parser" do
       end
 
       context "after parsing the output" do
-        it "finds 1 whitespace error" do
-          cane_parser.result[:"Line contains trailing whitespaces"].count.should == 1
-        end
+        context "for whitespace errors" do
+          it "finds 1 error" do
+            cane_parser.result[:"Line contains trailing whitespaces"].count.should == 1
+          end
 
-        it "identifies the correct source of the whitespace error" do
-          cane_parser.result[:"Line contains trailing whitespaces"].first.source.should == "app/controllers/carts_controller.rb"
-        end
+          it "identifies the correct source of the error" do
+            cane_parser.result[:"Line contains trailing whitespaces"].first.source.should == "app/controllers/carts_controller.rb"
+          end
 
-        it "identifies the correct line number for the whitespace error" do
-          cane_parser.result[:"Line contains trailing whitespaces"].first.line.should == [ "4" ]
+          it "identifies the correct line number for the error" do
+            cane_parser.result[:"Line contains trailing whitespaces"].first.line.should == [ "4" ]
+          end
         end
+        
+        context "for line length errors" do
+          it "finds 1 error" do
+            cane_parser.result[:"Line is >80 characters"].count.should == 1
+          end
 
-        it "finds 1 line length error" do
-          cane_parser.result[:"Line is >80 characters"].count.should == 1
+          it "identifies the correct source of the error" do
+            cane_parser.result[:"Line is >80 characters"].first.source.should == "app/controllers/products_controller.rb"
+          end
+
+          it "identifies the correct line number for the error" do
+            cane_parser.result[:"Line is >80 characters"].first.line.should == [ "47" ]
+          end
         end
-
-        it "identifies the correct source of the length error" do
-          cane_parser.result[:"Line is >80 characters"].first.source.should == "app/controllers/products_controller.rb"
-        end
-
-        it "identifies the correct line number for the length error" do
-          cane_parser.result[:"Line is >80 characters"].first.line.should == [ "47" ]
+        
+        context "for abc complexity errors" do
+          it "finds 1 error" do
+            cane_parser.result[:"Maximum allowed ABC complexity"].count.should == 1
+          end
+          
+          it "identifies the correct source of the error" do
+            cane_parser.result[:"Maximum allowed ABC complexity"].first.source.should == "app/controllers/orders_controller.rb"
+          end
+          
+          it "identifies the correct line number for the error" do
+            cane_parser.result[:"Maximum allowed ABC complexity"].first.line.should == [ "23" ]
+          end
         end
       end
     end

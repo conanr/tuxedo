@@ -31,7 +31,7 @@ module StyleStyle
     end
 
     def has_error?(line)
-      line.include?("Line is >80 characters") || line.include?("Line contains trailing whitespaces")
+      line.include?(">") || line.include?("Line contains trailing whitespaces")
     end
 
     def get_error(line)
@@ -39,18 +39,26 @@ module StyleStyle
         error = "Line is >80 characters"
       elsif line.include?("Line contains trailing whitespaces")
         error = "Line contains trailing whitespaces"
-      else
-        error = "Unknown error"
+      elsif line.include?(">") # abc complexity errors have a > char too
+        error = "Maximum allowed ABC complexity"
       end
       error
     end
 
     def get_file(line)
-      line.match(/([a-zA-Z0-9.\/_]+):/)[1]
+      if line.include?(":")
+        line.match(/([a-zA-Z0-9.\/_]+):/)[1]
+      else
+        line.split(" ").first
+      end
     end
 
     def get_lines(line)
-      [ line.match(/:(\d+)/)[1] ]
+      if line.include?(":")
+        [ line.match(/:(\d+)/)[1] ]
+      else
+        [ line.split(" ").last ]
+      end
     end
   end
 end
