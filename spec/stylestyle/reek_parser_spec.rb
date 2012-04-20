@@ -12,7 +12,7 @@ describe "Reek parser" do
         reek_parser.parse_reek(output_1)
         StyleStyle::Outputter.print_to_screen(reek_parser.result)
       end
-      
+
       context "after parsing the output" do
         it "finds 1 whitespace error" do
           # raise @reek_output.inspect

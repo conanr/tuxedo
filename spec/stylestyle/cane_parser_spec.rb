@@ -12,7 +12,7 @@ describe "cane parser" do
         cane_parser.parse_cane(output_1)
         StyleStyle::Outputter.print_to_screen(cane_parser.result)
       end
-      
+
       context "after parsing the output" do
         it "finds 1 whitespace error" do
           cane_parser.result[:"Line contains trailing whitespaces"].count.should == 1
