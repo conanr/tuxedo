@@ -1,3 +1,8 @@
+Methods exceeded maximum allowed ABC complexity (2):
+
+  app/controllers/orders_controller.rb         OrdersController > create        23
+  app/controllers/user_sessions_controller.rb  UserSessionsController > create  19
+
 Lines violated style requirements (16):
 
   app/controllers/carts_controller.rb:4                 Line contains trailing whitespaces
