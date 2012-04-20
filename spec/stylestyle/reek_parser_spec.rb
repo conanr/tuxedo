@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'helpers/cane_output_helper'
+require 'helpers/reek_output_helper'
 include StyleStyle
 
 describe "Reek parser" do
@@ -17,7 +17,6 @@ describe "Reek parser" do
 
       context "after parsing the output" do
         it "finds 1 whitespace error" do
-          # raise @reek_output.inspect
         end
       end
     end
