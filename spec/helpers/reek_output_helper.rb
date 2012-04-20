@@ -1,4 +1,78 @@
 module StyleStyle
+  def generate_reek_output
+    "---
+    - !ruby/object:Reek::SmellWarning
+      smell:
+        class: IrresponsibleModule
+        subclass: IrresponsibleModule
+        message: has no descriptive comment
+        module_name: AddressesController
+      status:
+        is_active: true
+      location:
+        context: AddressesController
+        lines:
+        - 1
+        source: ./app/controllers/addresses_controller.rb
+    - !ruby/object:Reek::SmellWarning
+      smell:
+        class: Duplication
+        subclass: DuplicateMethodCall
+        message: calls address.id twice
+        call: address.id
+        occurrences: 2
+      status:
+        is_active: true
+      location:
+        context: AddressesController#create
+        lines:
+        - 8
+        - 10
+        source: ./app/controllers/addresses_controller.rb
+    - !ruby/object:Reek::SmellWarning
+      smell:
+        class: LongMethod
+        subclass: TooManyStatements
+        message: has approx 6 statements
+        statement_count: 6
+      status:
+        is_active: true
+      location:
+        context: AddressesController#create
+        lines:
+        - 2
+        source: ./app/controllers/addresses_controller.rb
+    - !ruby/object:Reek::SmellWarning
+      smell:
+        class: UncommunicativeName
+        subclass: UncommunicativeVariableName
+        message: has the variable name 'c'
+        variable_name: c
+      status:
+        is_active: true
+      location:
+        context: ApplicationController#find_or_create_cart
+        lines:
+        - 34
+        source: ./app/controllers/application_controller.rb
+    - !ruby/object:Reek::SmellWarning
+      smell:
+        class: Duplication
+        subclass: DuplicateMethodCall
+        message: calls session twice
+        call: session
+        occurrences: 2
+      status:
+        is_active: true
+      location:
+        context: ApplicationController#mobile_device?
+        lines:
+        - 10
+        - 11
+        source: ./app/controllers/application_controller.rb
+"
+  end
+  
   def generate_full_reek_output
     "---
 - !ruby/object:Reek::SmellWarning
