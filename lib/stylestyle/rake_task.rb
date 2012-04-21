@@ -8,9 +8,11 @@ module StyleStyle
 
     attr_accessor :name
     attr_accessor :fail_on_error
+    attr_accessor :cane_opts
 
     def initialize(*args)
       @name = args.shift || :style
+      @cane_opts = ["--style-glob", "**/*.rb"]
       @fail_on_error = true
 
       yield self if block_given?
