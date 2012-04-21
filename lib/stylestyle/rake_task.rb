@@ -15,6 +15,10 @@ module StyleStyle
 
       yield self if block_given?
 
+      unless ::Rake.application.last_comment
+        desc %(Check code quality metrics with StyleStyle)
+      end
+
       task name do
         StyleStyle.output_to_console
       end
