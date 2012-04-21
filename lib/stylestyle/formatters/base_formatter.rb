@@ -12,14 +12,6 @@ module StyleStyle
       def format(metrics)
         # NOP
       end
-
-      private
-
-      def _underscore(string)
-        string = string.gsub(/([A-Z\d]+)([A-Z][a-z])/,'\1_\2')
-        string = string.gsub(/([a-z\d])([A-Z])/,'\1_\2')
-        string.downcase
-      end
     end
   end
 end
