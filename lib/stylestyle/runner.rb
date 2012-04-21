@@ -1,13 +1,23 @@
+require 'cane'
+require 'cane/cli'
+
 require 'stylestyle/tty'
 require 'stylestyle/cli'
+require 'stylestyle/cane_violation'
 
 module StyleStyle
   module Runner
     class << self
-      include Tty
-
-      def run_cane(path="**")
-        output = `cane --style-glob #{path}/*.rb`
+      def run_cane
+        cane_opts = "--style-glob **/*.rb".split
+        opts = Cane::CLI::Spec.new.parse(cane_opts)
+        runner = Cane::Runner.new(opts)
+        def runner.outputter;
+          @outputter ||= StringIO.new
+        end
+        runner.run
+        violations = runner.send(:violations)
+        violations.map { |v| CaneViolation.from_cane(v)}
       end
 
       def run_reek
