@@ -50,6 +50,7 @@ module StyleStyle
     def_color :bold,      1
     def_color :invert,    3
     def_color :underline, 4
+    def_color :black,     30
     def_color :red,       31
     def_color :green,     32
     def_color :yellow,    33
