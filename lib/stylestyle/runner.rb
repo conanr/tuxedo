@@ -8,8 +8,8 @@ require 'stylestyle/cane_violation'
 module StyleStyle
   module Runner
     class << self
-      def run_cane
-        cane_opts = "--style-glob **/*.rb".split
+      def run_cane(cane_opts=nil)
+        cane_opts ||= "--style-glob **/*.rb".split
         opts = Cane::CLI::Spec.new.parse(cane_opts)
         runner = Cane::Runner.new(opts)
         def runner.outputter;
