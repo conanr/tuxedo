@@ -2,6 +2,7 @@ $LOAD_PATH.unshift(File.expand_path(File.dirname(__FILE__))) unless
   $LOAD_PATH.include?(File.expand_path(File.dirname(__FILE__)))
 
 require 'yaml'
+require 'Open3'
 require 'stylestyle/outputter'
 require 'stylestyle/cane_parser'
 require 'stylestyle/reek_parser'
