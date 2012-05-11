@@ -19,10 +19,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency('cane')
   s.add_dependency('reek')
- 
-  s.executables  = []
-  s.bindir       = "bin"
-  s.executables  <<  "stylestyle"
+
   s.files        = Dir.glob("{bin,lib,data}/**/*")
   s.require_path = 'lib'
 end
