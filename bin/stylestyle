@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+require './lib/stylestyle'
+include StyleStyle
+
+StyleStyle.output_to_console
