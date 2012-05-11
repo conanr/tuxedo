@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
  
  
   s.bindir        = "bin"
-  s.executables   = ["cane"]
+  s.executables   = ["stylestyle"]
   s.files        = Dir.glob("{bin,lib,data}/**/*")
   s.require_path = 'lib'
 end
