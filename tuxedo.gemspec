@@ -2,14 +2,15 @@
 lib = File.expand_path('../lib/', __FILE__)
 $:.unshift lib unless $:.include?(lib)
  
-require 'bundler/version'
+require 'tuxedo/version'
  
 Gem::Specification.new do |s|
   s.name        = "tuxedo"
-  s.version     = "1.0.0"
-  s.authors     = ["Conan Rimmer", "Ed Weng"]
-  s.email       = ["conan.rimmer@livingsocial.com", "ed.weng@livingsocial.com"]
-  s.homepage    = "https://github.com/conanr/style"
+  s.version     = Tuxedo::VERSION
+  s.platform    = Gem::Platform::RUBY
+  s.authors     = ["Conan Rimmer", "Charles Strahan", "Ed Weng"]
+  s.email       = ["conan.rimmer@livingsocial.com", "charles.strahan@livingsocial.com", "ed.weng@livingsocial.com"]
+  s.homepage    = "https://github.com/conanr/tuxedo"
   s.summary     = "Wrapper for Cane and Reek for more managable output."
   s.description = "Wrapper for cane and reek used to produce better style with better output."
  

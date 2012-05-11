@@ -1,9 +1,11 @@
 require 'rspec/core/rake_task'
 require './lib/tuxedo/rake_task'
 require 'tuxedo/rake_task'
+require 'bundler'
+
+Bundler::GemHelper.install_tasks
 
 Tuxedo::RakeTask.new do
-
 end
 
 RSpec::Core::RakeTask.new do |t|
