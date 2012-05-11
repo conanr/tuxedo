@@ -29,7 +29,7 @@ describe "cane parser" do
             cane_parser.result[:"Line contains trailing whitespaces"].first.line.should == [ 4 ]
           end
         end
-        
+
         context "for line length errors" do
           it "finds 1 error" do
             cane_parser.result[:"Line is >80 characters"].count.should == 1
@@ -43,16 +43,16 @@ describe "cane parser" do
             cane_parser.result[:"Line is >80 characters"].first.line.should == [ 47 ]
           end
         end
-        
+
         context "for abc complexity errors" do
           it "finds 1 error" do
             cane_parser.result[:"Maximum allowed ABC complexity"].count.should == 1
           end
-          
+
           it "identifies the correct source of the error" do
             cane_parser.result[:"Maximum allowed ABC complexity"].first.source.should == "app/controllers/orders_controller.rb"
           end
-          
+
           it "identifies the correct line number for the error" do
             cane_parser.result[:"Maximum allowed ABC complexity"].first.line.should == [ 23 ]
           end

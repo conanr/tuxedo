@@ -29,7 +29,7 @@ describe "Reek parser" do
             reek_parser.result[:"TooManyStatements"].first.line.should == [ 2 ]
           end
         end
-        
+
         context "for UncommunicativeVariableName errors" do
           it "finds 1 error" do
             reek_parser.result[:"UncommunicativeVariableName"].count.should == 1

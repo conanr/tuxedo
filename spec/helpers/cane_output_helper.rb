@@ -3,7 +3,7 @@ module StyleStyle
     "Methods exceeded maximum allowed ABC complexity (1):
 
   app/controllers/orders_controller.rb         OrdersController > create        23
-      
+
     Lines violated style requirements (2):
 
   app/controllers/carts_controller.rb:4                 Line contains trailing whitespaces

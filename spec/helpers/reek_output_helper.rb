@@ -72,7 +72,7 @@ module StyleStyle
         source: ./app/controllers/application_controller.rb
 "
   end
-  
+
   def generate_full_reek_output
     "---
 - !ruby/object:Reek::SmellWarning
