@@ -1,4 +1,4 @@
-module StyleStyle
+module Tuxedo
   def generate_cane_output
     "Methods exceeded maximum allowed ABC complexity (1):
 

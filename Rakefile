@@ -1,8 +1,8 @@
 require 'rspec/core/rake_task'
-require './lib/stylestyle/rake_task'
-require 'stylestyle/rake_task'
+require './lib/tuxedo/rake_task'
+require 'tuxedo/rake_task'
 
-StyleStyle::RakeTask.new do
+Tuxedo::RakeTask.new do
 
 end
 

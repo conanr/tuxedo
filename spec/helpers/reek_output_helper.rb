@@ -1,4 +1,4 @@
-module StyleStyle
+module Tuxedo
   def generate_reek_output
     "---
     - !ruby/object:Reek::SmellWarning

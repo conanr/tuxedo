@@ -5,7 +5,7 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require 'stringio'
-require 'stylestyle'
+require 'tuxedo'
 
 RSpec.configure do |config|
   config.treat_symbols_as_metadata_keys_with_true_values = true
@@ -13,4 +13,4 @@ RSpec.configure do |config|
   config.filter_run :focus
 end
 
-include StyleStyle::Tty
+include Tuxedo::Tty

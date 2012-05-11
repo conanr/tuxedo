@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+require './lib/tuxedo'
+include Tuxedo
+
+Tuxedo.output_to_console
