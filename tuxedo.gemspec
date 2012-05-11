@@ -23,9 +23,10 @@ Gem::Specification.new do |s|
   s.add_dependency('cane')
   s.add_dependency('reek')
  
-  s.executables  = []
-  s.bindir       = "bin"
-  s.executables  <<  "tuxedo"
-  s.files        = Dir.glob("{bin,lib,data}/**/*")
-  s.require_path = 'lib'
+  s.rubyforge_project = "tuxedo"
+
+  s.files         = `git ls-files`.split("\n")
+  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+  s.require_paths = ["lib"]
 end
